@@ -22,3 +22,6 @@ build/
 *~
 lib/
 
+.vscode/
+Examples/Monocular/mono_euroc_video
+
