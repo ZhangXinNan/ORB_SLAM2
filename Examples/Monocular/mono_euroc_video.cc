@@ -50,8 +50,8 @@ int main(int argc, char **argv)
     // 帧率
     double rate = cap.get(CV_CAP_PROP_FPS);
     int nImages = (int)cap.get(CV_CAP_PROP_FRAME_COUNT);
-    int width = (int)cap.get(CV_CAP_PROP_FRAME_WIDTH);
-    int height = (int)cap.get(CV_CAP_PROP_FRAME_HEIGHT);
+    // int width = (int)cap.get(CV_CAP_PROP_FRAME_WIDTH);
+    // int height = (int)cap.get(CV_CAP_PROP_FRAME_HEIGHT);
 
 /*
     // Retrieve paths to images
@@ -126,12 +126,12 @@ int main(int argc, char **argv)
         //     T = vTimestamps[ni+1]-tframe;
         // else if(ni>0)
         //     T = tframe-vTimestamps[ni-1];
-        T = 1.0/CV_CAP_PROP_FPS;
+        T = 1.0/rate;
 
         if(ttrack<T)
             usleep((T-ttrack)*1e6);
         
-        tframe += 1.0/CV_CAP_PROP_FPS;
+        tframe += 1.0/rate;
         ni++;
     }
 
